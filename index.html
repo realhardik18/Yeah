@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="yeah_icon.png" type="image/x-icon">
+    <title>Yeah!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .container {
+            position: relative;
+        }
+
+        .yeah-text {
+            position: absolute;
+            font-weight: bold;
+            color: black;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body class="transition-colors duration-1000">
+    <div class="container mx-auto text-center mt-20">
+        <button class="btn bg-transparent border-none cursor-pointer" onclick="Yeah()">
+            <img src="yeah_image.jpg" alt="Yeah!" id="yeahImage" class="mx-auto w-24">
+        </button>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function Yeah() {
+            addYeahText();
+        }
+
+        function addYeahText() {
+            const yeahText = document.createElement('div');
+            yeahText.textContent = 'Yeah!';
+            yeahText.classList.add('yeah-text');
+
+            // Random font size and font style
+            yeahText.style.fontSize = `${Math.floor(Math.random() * 31) + 30}px`; // Random font size between 10px and 30px
+            yeahText.style.top = `${Math.random() * 100}vh`;
+            yeahText.style.left = `${Math.random() * 100}vw`;
+            document.body.appendChild(yeahText);
+        }
+    </script>
+</body>
+
+</html>
